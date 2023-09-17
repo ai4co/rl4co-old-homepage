@@ -8,6 +8,7 @@
   gtag('config', 'G-VCBE0EGS1N');
 </script>
 
+
 <!DOCTYPE html>
 <html lang=""><head>
     <meta charset="utf-8">
@@ -15,11 +16,11 @@
     
     <title>RL4CO</title>
     <meta name="description" content="RL4CO: an Extensive Reinforcement Learning for
- Combinatorial Optimization Benchmark.">
+ Combinatorial Optimization Benchmark">
     <meta property="og:title" content="RL4CO" />
     <meta property="og:description"
           content="RL4CO: an Extensive Reinforcement Learning for
- Combinatorial Optimization Benchmark." />
+ Combinatorial Optimization Benchmark" />
     <meta property="og:image" content="img/logo.png" />
     <meta name="keywords" content="" />
     
@@ -34,7 +35,9 @@
         crossorigin="anonymous">
     </script>
 
-    
+  <script src="https://cdn.jsdelivr.net/clipboard.js/2.0.0/clipboard.min.js"></script>
+
+
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
         integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
         onload="renderMathInElement(document.body);">
@@ -100,10 +103,15 @@
 </script>
 
 <div class="intro" style="align-items: center">
-  <p class="intro-title">RL4CO: an Extensive Reinforcement Learning for
- Combinatorial Optimization Benchmark.</p>
+  <!-- <p class="intro-title">RL4CO: an Extensive Reinforcement Learning for
+ Combinatorial Optimization Benchmark</p> -->
+
+<p class="intro-title">
+  <img src="img/rl4co.png" alt="overall-figure" style="width:60%">
+</p>
+
   <p id="intro-author">
-    <a href="https://scholar.google.com/citations?user=3DetYBsAAAAJ">Federico Berto</a><sup>* 1</sup>, 
+    <a href="https://fedebotu.github.io/">Federico Berto</a><sup>* 1</sup>, 
     <a href="https://scholar.google.com/citations?user=fjKA5gYAAAAJ&hl=en">Chuanbo Hua</a><sup>* 1</sup>, 
     <a href="https://junyoungpark.github.io/">Junyoung Park</a><sup>* 1, 2</sup>,<br> 
     <a href="https://scholar.google.com/citations?user=VvyLuhAAAAAJ&hl=en&oi=sra">Minsu Kim</a><sup>1</sup>, 
@@ -113,10 +121,14 @@
     <a href="https://scholar.google.com/citations?hl=en&user=92PvccwAAAAJ">Joungho Kim</a><sup>1</sup>, 
     <a href="https://scholar.google.com/citations?user=sH2a0nkAAAAJ&hl=en&oi=sra">Jinkyoo Park</a><sup>1, 2</sup><br>
     <sup>1</sup> Korea Advanced Institute of Science and Technology (KAIST)<br>
-    <sup>2</sup> OMELET
+    <sup>2</sup> OMELET AI
   </p>
 </div>
 <div class="nav">
+    <a href="https://join.slack.com/t/rl4co/shared_invite/zt-1ytz2c1v4-0IkQ8NQH4TRXIX8PrRmDhQ">
+      <iconify-icon icon="mdi:slack" class="icon"></iconify-icon>
+      Slack
+    </a>
     <a href="https://arxiv.org/abs/2306.17100">
       <iconify-icon icon="academicons:arxiv" class="icon"></iconify-icon>
       arXiv
@@ -138,25 +150,36 @@
       Envs
     </a>
 </div>
+
+
+An extensive Reinforcement Learning (RL) for Combinatorial Optimization (CO) benchmark. Our goal is to provide a unified framework for RL-based CO algorithms, and to facilitate reproducible research in this field, decoupling the science from the engineering.
+
+RL4CO is built upon:
+<ul>
+  <li><a href="https://github.com/pytorch/rl">TorchRL</a>: official PyTorch framework for RL algorithms and vectorized environments on GPUs</li>
+  <li><a href="https://github.com/pytorch-labs/tensordict">TensorDict</a>: a library to easily handle heterogeneous data such as states, actions and rewards</li>
+  <li><a href="https://lightning.ai/docs/pytorch/stable/">PyTorch Lightning</a>: a lightweight PyTorch wrapper for high-performance AI research</li>
+  <li><a href="https://hydra.cc/">Hydra</a>: a framework for elegantly configuring complex applications</li>
+</ul>
+
+
+<h2>Installation</h2>
+
+You can easily install RL4CO from PyPI:
+<!-- <pre> -->
+    <code id="pip">
+        pip install rl4co
+    </code>
+<!-- </pre> -->
+
+
+<h2>Unified and Modular Implementation of RL-for-CO</h2>
+
+
 <div class="overall-figure" style="align-items: center">
   <img src="img/overview.png" alt="overall-figure" style="width:100%">
 </div>
-<div class="intro" style="align-items: center">
-  <p class="intro-abstract">RL4CO: an Extensive Reinforcement Learning for Combinatorial Optimization Benchmark.We introduce RL4CO,
-     an extensive reinforcement learning (RL) for combinatorial optimization (CO) benchmark. RL4CO employs state-of-the-art software
-     libraries as well as best practices in implementation, such as modularity and configuration management, to be efficient and 
-     easily modifiable by researchers for adaptations of neural network architecture, environments, and algorithms. Contrary to the
-     existing focus on specific tasks like the traveling salesman problem (TSP) for performance assessment, we underline the 
-     importance of scalability and generalization capabilities for diverse optimization tasks. We also systematically benchmark 
-     sample efficiency, zero-shot generalization, and adaptability to changes in data distributions of various models. 
-     Our experiments show that some recent state-of-the-art methods fall behind their predecessors when evaluated using these new 
-     metrics, suggesting the necessity for a more balanced view of the performance of neural CO solvers. We hope RL4CO will 
-     encourage the exploration of novel solutions to complex real-world tasks, allowing to compare with existing methods through a
-     standardized interface that decouples the science from the software engineering. We make our library publicly available at 
-     <a href="https://github.com/kaist-silab/rl4co">https://github.com/kaist-silab/rl4co</a>.</p>
-</div>
 
-<h2>Unified and Modular Implementation of NCO</h2>
 <p id="text-before-toggle">RL4CO aims to decouple the major components of the autoregressive policy of NCO and its training
 routine while prioritizing reusability. We consider five major components, which are explained in
 the following paragraphs.</p>
@@ -224,221 +247,20 @@ the following paragraphs.</p>
   </p>
 </div>
 
-<h2 id="title-after-toggle">Experiments and Analysis</h2>
-<p>Our focus is to benchmark the NCO solvers under controlled settings, aiming to compare all bench-
-marked methods as closely as possible in terms of network architectures and the number of training
-samples consumed.</p>
 
-<p class="contexts-not-first"><b>TL; DR</b> Here is a summary of the benchmark results:</p>
-<ul class="contexts-not-first">
-  <li>
-    <span class="codetext">AM</span> employs the multi-head attention (MHA) encoder and single-head attention decoder trained using 
-    REINFORCE and the rollout baseline.
-  </li>
-  <li>
-    The choice of decoding schemes has a significant impact on the solution quality of NCO solvers.
-    Our findings suggest that employing greedy augmentation decoding scheme the random problem
-    augmentation, and selecting the best solution from augmented problems approach significantly
-    enhances the solution quality of the trained solver.
-  </li>
-  <li>
-    We find that in-distribution performance trends do not always match with out-of-distribution
-    ones when testing with different problem sizes. 
-  </li>
-  <li>
-    When the number of samples is limited, the ranking of baseline methods can significantly
-    change. Actor-critic methods can be a good choice in data-constrained applications.
-  </li>
-</ul>
+<h2 id="title-after-toggle">Contribute</h2>
 
-<div class="toggle-box">
-  <input type="checkbox" id="box-6">
-  <h3><label for="box-6">Benchmarked Solvers</label></h3>
-  <ul class="toggle-list">
-    <li>
-      <span class="codetext">AM</span> employs the multi-head attention (MHA) encoder and single-head attention decoder trained using 
-      REINFORCE and the rollout baseline.
-    </li>
-    <li>
-      The choice of decoding schemes has a significant impact on the solution quality of NCO solvers.
-      Our findings suggest that employing greedy augmentation decoding scheme the random problem
-      augmentation, and selecting the best solution from augmented problems approach significantly
-      enhances the solution quality of the trained solver.
-    </li>
-    <li>
-      We find that in-distribution performance trends do not always match with out-of-distribution
-      ones when testing with different problem sizes. 
-    </li>
-    <li>
-      When the number of samples is limited, the ranking of baseline methods can significantly
-      change. Actor-critic methods can be a good choice in data-constrained applications.
-    </li>
-  </ul>
-</div>
 
-<div clss="figure-block" style="align-items: center; margin-bottom: 20px;">
-    <img src="img/decoding_schemes.png" alt="overall-figure" style="width:80%; margin-left:10%">
-    <figcaption style="width: 100%; text-align: center;">Decoding schemes of the autoregressive NCO solvers evaluated in this paper.</figcaption>
-</div>
+Have a suggestion, request, or found a bug? Feel free to open an issue or submit a pull request. We welcome and look forward to all contributions to RL4CO!
+We are also on Slack if you have any questions or would like to discuss RL4CO with us. We are open to collaborations and would love to hear from you 🚀
 
-<div class="toggle-box">
-  <input type="checkbox" id="box-7">
-  <h3><label for="box-7">Decoding Schemes</label></h3>
-  <ul class="toggle-list">
-    <li>
-      <span class="codetext">Greedy</span> elects the highest probabilities at each decoding step.
-    </li>
-    <li>
-      <span class="codetext">Sampling</span> concurrently samples <em>N</em> solutions using a trained stochastic policy.
-    </li>
-    <li>
-      <span class="codetext">Multistart Greedy</span>, inspired by POMO, decodes from the first given nodes and considers the best results 
-      from <em>N</em> cases starting at <em>N</em> different cities. For example, in TSP with <em>N</em> nodes, a single problem involves 
-      starting from <em>N</em> different cities.
-    </li>
-    <li>
-      <span class="codetext">Augmentation</span> selects the best greedy solutions from randomly augmented problems, such as through rotation and 
-      flipping.
-    </li>
-    <li>
-      <span class="codetext">Multistart Greedy + Augmentation</span> combines the Multistart Greedy with Augmentation.
-    </li>
-  </ul>
-</div>
-
-<div clss="figure-block" style="align-items: center">
-  <figure>
-    <img src="img/pareto_tsp50.png" alt="overall-figure" style="width:90%; margin-left:5%">
-    <figcaption style="width: 100%; text-align: center;">Pareto front of decoding schemes vs. number of samples on TSP50</figcaption>
-  </figure>
-</div>
-<div clss="figure-block" style="align-items: center; margin-bottom: 20px;">
-    <img src="img/pareto_cvrp50.png" alt="overall-figure" style="width:80%; margin-left:10%">
-    <figcaption style="width: 100%; text-align: center;">Pareto front of decoding schemes vs. number of samples on CVRP50</figcaption>
-</div>
-
-<div class="toggle-box">
-  <input type="checkbox" id="box-8">
-  <h3><label for="box-8">In-distribution Benchmark</label></h3>
-  <p class="toggle-text">
-    We first measure the performances of NCO solvers on the datasets on which they are trained on. 
-    The results are summarized in. We first observe that, counter to the 
-    commonly known trends that AM &lt; POMO &lt; Sym-NCO, the trend can change to the selection of decoding 
-    schemes. Especially, when the solver decodes the solutions with <span class="codetext">Augmentation</span> or 
-    <span class="codetext">Greedy Multistart + Augmentation</span>, the performance differences among the benchmarked 
-    solvers on TSP20/50, CVRP20/50 becomes insignificant. That implies we can improve the solution 
-    qualities by paying for additional resources. These observations lead us to the requirements for 
-    an in-depth investigation of the sampling methods and their efficiency.<br><br>
-    <b>More Sampling, which decoding scheme?</b> Based on our previous findings, we anticipate that by investing 
-    more computational resources (i.e., increasing the number of samples), the trained NCO solver can discover 
-    improved solutions. In this investigation, we examine the performance gains achieved with varying numbers 
-    of samples on the TSP50 dataset. As shown in, all solvers demonstrate that 
-    the <span class="codetext">Augmentation</span> decoding scheme achieves the Pareto front with limited samples and, notably, 
-    generally outperforms other decoding schemes. We observed a similar tendency from CVRP50 datasets.
-  </p>
-</div>
-
-<div class="toggle-box">
-  <input type="checkbox" id="box-9">
-  <h3><label for="box-9">Out-of-distribution Benchmark</label></h3>
-  <p class="toggle-text">
-    <b>Zero-shot Generalization</b> In this section, we evaluate the out-of-distribution performance of the 
-    NCO solvers by measuring the optimality gap compared to the best-known tractable solver. The evaluation 
-    results are visualized in. Contrary to the in-distribution results, we find that NCO 
-    solvers with sophisticated baselines (i.e., POMO, Sym-NCO) tend to exhibit worse generalization when the 
-    problem size changes, either for solving smaller or larger instances. This can be seen as an indication of 
-    "overfitting" to the training sizes. On the other hand, the variant of AM shows relatively better generalization 
-    results overall.
-  </p>
-</div>
-
-<div clss="figure-block" style="align-items: center; margin-bottom: 20px;">
-    <img src="img/sample-efficiency.png" alt="overall-figure" style="width:90%; margin-left:5%">
-    <figcaption style="width: 100%; text-align: center;">Sample efficiency comparison. The validation cost over the number of samples is reported. All
-models use the same number of samples same number of gradient steps.</figcaption>
-</div>
-
-<div class="toggle-box">
-  <input type="checkbox" id="box-10">
-  <h3><label for="box-10">Sample Efficiency</label></h3>
-  <p class="toggle-text">
-    We compare the sample efficiency of different models by evaluating the number of reward function
-    (referred to as oracle) evaluations. Preliminary results indicate that POMO exhibits lower sample
-    efficiency compared to AM. Moreover, AM with a critic baseline outperforms AM with a rollout
-    baseline which gives reserved results to compare with the main results. Finally, AM-XL gives almost
-    the best score similar to the state-of-the-art solver Sym-NCO. This indicates that the number of
-    samples really matters for improving performances and restriction of sample efficiency is important
-    for evaluation. Interestingly, for the case, when the number of samples is restricted, the actor-critic
-    methods, such as AM trained with PPO (AM PPO, more details in Appendix) can outperform
-    SoTA pure policy gradient methods. <br><br>
-    <b>Sample Efficient NCO Benchmark</b> In domains like electrical design automation (EDA), reward
-    evaluation can be significantly resource-intensive due to the need for electrical simulations. EDA
-    encompasses various TSP-like problems, including chip placement, global routing, and
-    channel routing. These problems require electrical simulations for reward evaluation, em-
-    phasizing the necessity for sample-efficient NCO methods. To highlight the importance of sample
-    efficiency in NCO, we introduce a real-world EDA benchmark for 3D integrated chip design, specif-
-    ically the multiple decoupling capacitors (decap) placement problem, inspired by Kim et al.
-    Please refer to the Appendix for further details.
-  </p>
-</div>
-
-<h2 id="title-after-toggle">Future Directions in RL4CO</h2>
 <br>
-<div class="toggle-box">
-  <input type="checkbox" id="box-11">
-  <h3><label for="box-11">Learning with Symmetries</label></h3>
-  <p class="toggle-text">
-    The use of symmetries in learning has been a popular approach to
-    enhance the performance of AM, as demonstrated in the works of POMO and Sym-NCO. However,
-    their methods suffer from limitations in sample efficiency and generalizability, indicating that they
-    struggle to effectively incorporate symmetries and harness their natural benefits. In contrast, recent
-    research by Kim et al. shows that symmetric exploration without reward simulation is a viable
-    alternative, which significantly enhances the sample efficiency of Deep Reinforcement Learning
-    (DRL) when exploring combinatorial spaces. Additionally, there is potential for properly incorpo-
-    rating symmetries from input graphs into neural networks, thereby improving their generalization
-    capabilities.
-  </p>
-</div>
 
-<div class="toggle-box">
-  <input type="checkbox" id="box-12">
-  <h3><label for="box-12">Few Shot Learning</label></h3>
-  <p class="toggle-text">
-    In current trends, researchers train large models separately for each task and
-    even for different scales, such as <em>N = 20, 50, 100</em>. However, this approach of lengthy training for
-    each individual task and scale is impractical. It is essential to explore few-shot learning schemes
-    that enable rapid adaptation to new tasks and scales, as this is crucial for practical applications.
-    Recently, some researchers have begun investigating few-shot learning schemes for scale adaptation, 
-    but further research is still needed to explore task-wise few-shot learning. For example, can
-    a model trained for TSP effectively solve CVRP? This question highlights the need for additional
-    investigations into task-specific few-shot learning approaches.
-  </p>
-</div>
-
-<div class="toggle-box">
-  <input type="checkbox" id="box-13">
-  <h3><label for="box-13">Scalable Neural Architectures and Foundation Models</label></h3>
-  <p class="toggle-text">
-    The neural architecture of the AM in-
-    corporates multi-head attention, which exhibits a computational complexity of <em>O(N 2)</em>. Conse-
-    quently, this leads to slower speeds when dealing with large-scale datasets. Taking inspiration
-    from recent research on large language models (LLM) that aim to replace attention mechanisms
-    with faster and more efficient alternatives, we propose considering alternative architectures such as
-    Hyena in the future that can scale sub-quadratically (i.e., with <em>O(N log N)</em> ) while maintaining
-    comparable performance levels with transformers. These approaches may also open the door toward
-    foundation models for general NCO, not necessarily restricted to pure RL methods. With the right
-    set of assumptions - research questions include, how to effectively encode or tokenize continuous
-    features and how to adaptively apply environment-specific constraints into their decoding schemes
-    - we believe foundation models could revolutionize NCO in the future as LLMs have done for lan-
-    guage and reasoning. Efficient task-specific finetuning could also be employed for better
-    adaptation with limited data and computational budget.
-  </p>
-</div>
 
 <h2 id="title-after-toggle">Cite us</h2>
 <p>If you find RL4CO valuable for your research or applied projects:</p>
 <pre>
-    <code>   
+    <code id="bibtex">
         @article&lcub;berto2023rl4co,
             title = &lcub;&lcub;RL4CO&rcub;: an Extensive Reinforcement Learning for Combinatorial Optimization Benchmark&rcub;,
             author=&lcub;Federico Berto and Chuanbo Hua and Junyoung Park and Minsu Kim and Hyeonah Kim and Jiwoo Son and Haeyeon Kim and Joungho Kim and Jinkyoo Park&rcub;,
@@ -455,3 +277,4 @@ models use the same number of samples same number of gradient steps.</figcaption
 </div>
     </body>
 </html>
+
