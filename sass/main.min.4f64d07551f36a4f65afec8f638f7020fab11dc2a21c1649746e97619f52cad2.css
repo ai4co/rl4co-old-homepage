@@ -310,10 +310,10 @@ input[type=checkbox]:checked~h3 label::before{
     margin-top:-4px
 }
 input[type=checkbox]:checked~h3~p{
-    max-height:400px
+    max-height:600px
 }
 input[type=checkbox]:checked~h3~ul{
-    max-height:400px
+    max-height:600px
 }
 .toggle-text{
     max-height:0;
