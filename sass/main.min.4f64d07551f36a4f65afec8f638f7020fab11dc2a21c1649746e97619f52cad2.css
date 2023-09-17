@@ -166,12 +166,43 @@ p a,li a{
 .fa-sun{
     color:#f39c12
 }
-.main{
+/* .main{
     display:flex;
     flex-direction:column;
-    width:70%;
+    width:90%;
     margin:auto
+} */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 70%;  /* Default width for large screens */
+    margin: auto;
 }
+
+/* Medium-sized devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main {
+        width: 85%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 767px) {
+    .main {
+        width: 90%;
+    }
+}
+
+/* Extra small devices (phones, less than 600px) */
+@media (max-width: 599px) {
+    .main {
+        width: 95%;
+        margin: 10px auto;  /* You can adjust the vertical margins here if needed */
+    }
+}
+
+
 .intro{
     display:flex;
     flex-direction:column
@@ -279,10 +310,10 @@ input[type=checkbox]:checked~h3 label::before{
     margin-top:-4px
 }
 input[type=checkbox]:checked~h3~p{
-    max-height:300px
+    max-height:400px
 }
 input[type=checkbox]:checked~h3~ul{
-    max-height:300px
+    max-height:400px
 }
 .toggle-text{
     max-height:0;
@@ -357,8 +388,9 @@ blockquote{
     color:#fff;
     text-decoration:none;
     border-radius:15px;
-    margin:5px
+    margin:5px;
 }
+
 .nav a:hover{
     position:relative;
     background:#fff;
