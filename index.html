@@ -15,12 +15,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     
     <title>RL4CO</title>
-    <meta name="description" content="RL4CO: an Extensive Reinforcement Learning for
- Combinatorial Optimization Benchmark">
+    <meta name="description" content="RL4CO: a Unified Reinforcement Learning for
+ Combinatorial Optimization Library">
     <meta property="og:title" content="RL4CO" />
     <meta property="og:description"
-          content="RL4CO: an Extensive Reinforcement Learning for
- Combinatorial Optimization Benchmark" />
+          content="RL4CO: a Unified Reinforcement Learning for
+ Combinatorial Optimization Library" />
     <meta property="og:image" content="img/logo.png" />
     <meta name="keywords" content="" />
     
@@ -147,7 +147,7 @@
 </div>
 
 
-An extensive Reinforcement Learning (RL) for Combinatorial Optimization (CO) benchmark. Our goal is to provide a unified framework for RL-based CO algorithms, and to facilitate reproducible research in this field, decoupling the science from the engineering.
+A unified Reinforcement Learning (RL) for Combinatorial Optimization (CO) library. Our goal is to provide a unified framework for RL-based CO algorithms, and to facilitate reproducible research in this field, decoupling the science from the engineering.
 
 RL4CO is built upon:
 <ul>
@@ -181,6 +181,9 @@ routine while prioritizing reusability:</p>
 <div class="toggle-box">
   <input type="checkbox" id="box-1">
   <h3><label for="box-1">Policy</label></h3>
+  <div class="overall-figure" style="align-items: center">
+    <img src="img/policy.png" alt="overall-figure" style="width:100%">
+  </div>
   <p class="toggle-text">
     This module takes the problem and constructs solutions autoregressively. The policy consists of the following components: 
     <span class="codetext">Init Embedding</span>, <span class="codetext">Encoder</span>, <span class="codetext">Context Embedding</span>, and <span class="codetext">Decoder</span>. Each of these components is 
@@ -254,23 +257,41 @@ We are also on Slack if you have any questions or would like to discuss RL4CO wi
 </p>
 
 
+<h2 id="title-after-toggle">Future Works</h2>
+
+We are expanding RL4CO in several directions, including but not limited to:
+<ul>
+  <li>More CO problems: harder constraints (such as time windows), diverse problems (scheduling)</li>
+  <li>More models: we are currently extending to non-autoregressive policies (NAR), neural improvement methods</li>
+  <li>More RL algorithms: GFlowNets, recent training schemes</li>
+  <li>Easy integration with local search: C++ API to hybridize RL and heuristics</li>
+  <li>... and more!</li>
+</ul>
+
+<li> 👉 Interested in collaborating? Reach out to us on 
+  <a href="https://join.slack.com/t/rl4co/shared_invite/zt-1ytz2c1v4-0IkQ8NQH4TRXIX8PrRmDhQ">Slack</a>!
+</li>
+
+
+
 
 <h2 id="title-after-toggle">Cite us</h2>
 <p>If you find RL4CO valuable for your research or applied projects:</p>
 <pre>
     <code id="bibtex">
-        @article&lcub;berto2023rl4co,
-            title = &lcub;&lcub;RL4CO&rcub;: an Extensive Reinforcement Learning for Combinatorial Optimization Benchmark&rcub;,
-            author=&lcub;Federico Berto and Chuanbo Hua and Junyoung Park and Minsu Kim and Hyeonah Kim and Jiwoo Son and Haeyeon Kim and Joungho Kim and Jinkyoo Park&rcub;,
-            journal=&lcub;arXiv preprint arXiv:2306.17100&rcub;,
-            year=&lcub;2023&rcub;,
-            url = &lcub;https://github.com/ai4co/rl4co&rcub;
-        &rcub;
+  @inproceedings&lcub;berto2023rl4co,
+    title = &lcub;&lcub;RL4CO&rcub;: a Unified Reinforcement Learning for Combinatorial Optimization Library&rcub;,
+    author=&lcub;Federico Berto and Chuanbo Hua and Junyoung Park and Minsu Kim and Hyeonah Kim and Jiwoo Son and Haeyeon Kim and Joungho Kim and Jinkyoo Park&rcub;,
+    booktitle=&lcub;NeurIPS 2023 Workshop: New Frontiers in Graph Learning&rcub;,
+    year=&lcub;2023&rcub;,
+    url=&lcub;https://openreview.net/forum?id=YXSJxi8dOV&rcub;,
+    note=&lcub;\url{https://github.com/ai4co/rl4co}&rcub;
+  &rcub;
     </code>
 </pre> 
 
 <footer id="footer">
-    <p class="copyright" style="color:rgb(179, 179, 179);">2023 © Copyright Federico Berto, Chuanbo Hua, Junyoung Park</p>
+    <p class="copyright" style="color:rgb(179, 179, 179);">2023 © RL4CO contributors</p>
 </footer>
 </div>
     </body>
